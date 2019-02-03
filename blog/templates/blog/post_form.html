@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% if user.profile.balance >= 100 %}
+      <div >
+          <form method="POST">
+              {% csrf_token %}
+              <fieldset class="form-group">
+                  <legend class="border-bottom mb-4">Blog Post</legend>
+                  {{ form.media }}
+                  {{ form|crispy }}
+              </fieldset>
+              <div class="form-group">
+                  <button class="btn btn-outline-info" type="submit">Post</button>
+              </div>
+          </form>
+      </div>
+    {% else %}
+      <h1>You dont have sufficient amount to post a new article</h1>
+    {% endif %}
+{% endblock content %}

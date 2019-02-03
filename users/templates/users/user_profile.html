@@ -1,0 +1,25 @@
+{% extends "blog/baseprofile.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+
+          <div class="card border-primary h-100">
+            <div style="text-align:center;">
+              <br>
+              <div class="media-body">
+                <h4 >Username : {{ user_p.username }}</h4>
+                <h4 >Balance : {{ user_p.profile.balance }}</h4>
+
+
+              </h4>
+              <br>
+              </div>
+
+
+            </div>
+            </div>
+
+
+{% endblock content %}
